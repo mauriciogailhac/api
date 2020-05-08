@@ -25,6 +25,7 @@ mutation {
         addUser(name:"username str") {
             userId
             name
+            error
         }
 }
 
@@ -64,6 +65,7 @@ mutation {
                 }
 
             }
+            error
         }
     }
 ```
@@ -74,7 +76,7 @@ mutation {
 mutation {
         removeContact(contactId:"UUID"){
          ok
-         msg
+         error
         }
     }
 ```
@@ -85,7 +87,7 @@ mutation {
 mutation {
         removeUser(userId:"UUID"){
          ok
-         msg
+         error
         }
     }
 ```
@@ -193,7 +195,7 @@ query {
         allContactData {
             type
             value
-            contactId
+            contactid
         }
     }
 ```

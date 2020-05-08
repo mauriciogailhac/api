@@ -4,7 +4,9 @@ db = SQLAlchemy()
 
 
 class ContactData(db.Model):
-
+    """
+    Class to model data base - ORM
+    """
     __tablename__ = 'contactData'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -14,7 +16,9 @@ class ContactData(db.Model):
 
 
 class Contact(db.Model):
-
+    """
+    Class to model data base - ORM
+    """
     __tablename__ = 'contact'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -25,12 +29,12 @@ class Contact(db.Model):
 
 
 class User(db.Model):
-
+    """
+    Class to model data base - ORM
+    """
     __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     userId = db.Column(db.String, nullable=False)
     contacts = db.relationship(Contact, backref='user', passive_deletes=True)
-
-

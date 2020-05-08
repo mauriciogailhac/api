@@ -6,6 +6,9 @@ from test.resolvers import resolve_allUsers, resolve_allContacts, resolve_allCon
 
 
 class Query(graphene.ObjectType):
+    """
+    Class to define queries
+    """
     allUsers = graphene.List(user_schema.User, resolver=resolve_allUsers)
     allContacts = graphene.List(contact_schema.Contact, resolver=resolve_allContacts)
     allContactData = graphene.List(contact_schema.ContactData, resolver=resolve_allContactData)
@@ -21,11 +24,17 @@ class Query(graphene.ObjectType):
 
 
 class Mutation(graphene.ObjectType):
+    """
+    Class to define mutations
+    """
     addContacts = contact_schema.addContacts.Field()
     removeContact = contact_schema.removeContact.Field()
 
     addUser = user_schema.addUser.Field()
     removeUser = user_schema.removeUser.Field()
+
+
+# Define GraphQL schema of our API
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
