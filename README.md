@@ -50,6 +50,14 @@ pip install -r src/requirements.txt
 python src/gloria.py
 ```
 
+9. To test the API, go to:
+
+```commandline
+http://127.0.0.1:5000/gloria
+```
+
+10. Finally, copy and paste the queries or mutations and then click on the button play to execute them.
+
 ## Supported Queries and Mutations
 
 ### Mutations
