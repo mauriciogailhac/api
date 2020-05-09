@@ -2,6 +2,8 @@
 
 ## Running the API
 
+### Docker
+
 1. Run the following command:
 
 ```commandline
@@ -12,6 +14,40 @@ docker-compose up -d
 
 ```text
 http://127.0.0.1:5000/gloria
+```
+
+### Virtualenv
+
+1. Install virtualenv in your system.
+
+2. Install postgresql in your system.
+
+3. Create user "admin", password "admin" and db "gloria" on postgresql.
+
+4. Make sure that postgresql is running on port 5432.
+
+5. Create a virtualenv inside the project directory using the following command:
+
+```commandline
+virtualenv . -p path/to/python3/interpreter
+```
+
+6. Activate the virtualenv:
+
+```commandline
+source bin/activate
+```
+
+7. Install python packages:
+
+```commandline
+pip install -r src/requirements.txt
+```
+
+8. Run the api:
+
+```commandline
+python src/gloria.py
 ```
 
 ## Supported Queries and Mutations
